@@ -1,5 +1,5 @@
 import {searchRandomNumberRange, getRandomElementArray} from './utils.js';
-import { commentId, photoId, urlId, NAMES, DESCRIPTIONS, MESSAGES, MIN_LIKES, MAX_LIKES, MAX_COMMENTS, MAX_AVATAR_NUMBER } from './generator-and-data.js';
+import { commentId, photoId, urlId, NUMBER_PHOTO, NAMES, DESCRIPTIONS, MESSAGES, MIN_LIKES, MAX_LIKES, MAX_COMMENTS, MAX_AVATAR_NUMBER } from './generator-and-data.js';
 
 // функция создания комментария записи под фото
 const descriptionPhotoComment = () => ({
@@ -28,4 +28,7 @@ const createOnePhotoObject = () => ({
   comments: createArrayObjects()
 });
 
-export{createOnePhotoObject};
+const createManyPhotosPosts = () =>
+  Array.from({ length: NUMBER_PHOTO }, createOnePhotoObject);
+
+export{createManyPhotosPosts};
